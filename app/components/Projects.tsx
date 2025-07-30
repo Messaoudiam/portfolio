@@ -65,7 +65,15 @@ export default function Projects({}: ProjectsProps) {
       title: "Clic-ERP",
       description:
         "Digital management application for Public Access Establishments (ERP). Centralizes documents, intelligently manages equipment and periodic visits, dematerializes registers, and provides partner access. A comprehensive solution for regulatory compliance and operational efficiency.",
-      tech: ["TypeScript", "Angular", "NestJS", "TypeORM", "MySQL", "Docker", "Angular Material"],
+      tech: [
+        "TypeScript",
+        "Angular",
+        "NestJS",
+        "TypeORM",
+        "MySQL",
+        "Docker",
+        "Angular Material",
+      ],
       link: "https://www.clic-erp.fr/landing",
     },
     {
