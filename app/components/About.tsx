@@ -15,6 +15,7 @@ import {
   SiDocker,
   SiGithubactions,
   SiGit,
+  SiNextdotjs,
 } from "react-icons/si";
 import { MdDevices } from "react-icons/md";
 
@@ -41,6 +42,7 @@ export default function About({}: AboutProps) {
     "GitHub Actions": <SiGithubactions className="w-4 h-4 text-[#2088FF]" />,
     Git: <SiGit className="w-4 h-4 text-[#F05032]" />,
     "CI/CD": <SiGithubactions className="w-4 h-4 text-[#2088FF]" />,
+    "Next.js": <SiNextdotjs className="w-4 h-4 text-[#000000]" />,
   };
 
   const skillCategories = {
@@ -49,6 +51,7 @@ export default function About({}: AboutProps) {
       "Angular",
       "Angular Material",
       "React",
+      "Next.js",
       "Tailwind CSS",
     ],
     Backend: ["Node.js", "NestJS", "Express", "TypeORM", "Prisma", "Swagger"],

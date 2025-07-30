@@ -17,6 +17,8 @@ import {
   SiGit,
   SiJavascript,
   SiJsonwebtokens,
+  SiNextdotjs,
+  SiRadixui,
 } from "react-icons/si";
 import { MdDevices } from "react-icons/md";
 
@@ -42,6 +44,8 @@ const iconMap: Record<string, React.JSX.Element> = {
   "CI/CD": <SiGithubactions className="w-3 h-3 text-[#2088FF]" />,
   JavaScript: <SiJavascript className="w-3 h-3 text-[#F7DF1E]" />,
   JWT: <SiJsonwebtokens className="w-3 h-3 text-[#000000]" />,
+  "Next.js": <SiNextdotjs className="w-3 h-3 text-[#000000]" />,
+  "shadcn/ui": <SiRadixui className="w-3 h-3 text-[#161618]" />,
 };
 
 interface Project {
@@ -61,22 +65,38 @@ export default function Projects({}: ProjectsProps) {
       title: "Clic-ERP",
       description:
         "Digital management application for Public Access Establishments (ERP). Centralizes documents, intelligently manages equipment and periodic visits, dematerializes registers, and provides partner access. A comprehensive solution for regulatory compliance and operational efficiency.",
-      tech: ["Angular", "NestJS", "TypeORM", "TypeScript", "MySQL", "Docker"],
+      tech: ["TypeScript", "Angular", "NestJS", "TypeORM", "MySQL", "Docker", "Angular Material"],
       link: "https://www.clic-erp.fr/landing",
     },
     {
       title: "MediaTech",
       description:
         "A modern media management platform built with Angular 19 and NestJS. Features standalone components, Prisma ORM, JWT authentication, and comprehensive Docker containerization with CI/CD pipeline.",
-      tech: ["Angular", "NestJS", "Prisma", "PostgreSQL", "Docker", "JWT"],
+      tech: [
+        "TypeScript",
+        "Angular",
+        "NestJS",
+        "Prisma",
+        "PostgreSQL",
+        "Docker",
+        "CI/CD",
+      ],
       github: "https://github.com/Messaoudiam/MediaTech",
     },
     {
-      title: "Airnbb Platform",
+      title: "School Sign",
       description:
-        "Airbnb-inspired accommodation booking platform developed during Wild Code School training. Includes property listings, booking system, and user authentication.",
-      tech: ["JavaScript", "React", "Express", "MongoDB"],
-      github: "https://github.com/Messaoudiam/Airnbb",
+        "Modern school management and digital sign-in system built with Next.js 15. Features student registration, attendance tracking, and administrative dashboard with real-time updates and secure authentication.",
+      tech: [
+        "TypeScript",
+        "React",
+        "Next.js",
+        "MySQL",
+        "Prisma",
+        "Tailwind CSS",
+        "shadcn/ui",
+      ],
+      github: "https://github.com/Messaoudiam/school-sign",
     },
   ];
 
