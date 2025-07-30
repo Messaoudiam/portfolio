@@ -19,10 +19,10 @@ export default function Header({}: HeaderProps) {
             <span className="text-accent">Z</span>OUGGAB
           </button>
 
-          {/* Right side: nav + utilities */}
-          <div className="flex items-center space-x-6">
-            {/* Desktop navigation */}
-            <div className="hidden md:flex items-center space-x-6">
+          {/* Navigation & utilities */}
+          <div className="flex items-center gap-4">
+            {/* Navigation links */}
+            <div className="hidden">
               <a
                 href="#about"
                 className="text-sm font-medium text-foreground/70 hover:text-accent transition-colors"
@@ -45,24 +45,6 @@ export default function Header({}: HeaderProps) {
 
             {/* Theme toggle */}
             <ThemeToggle />
-
-            {/* Mobile burger */}
-            <button className="md:hidden p-2 cursor-pointer" aria-label="Menu">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                className="text-foreground"
-              >
-                <path
-                  d="M2.5 5h15M2.5 10h15M2.5 15h15"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </button>
           </div>
         </div>
       </nav>
