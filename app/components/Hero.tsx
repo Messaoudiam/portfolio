@@ -2,7 +2,7 @@ interface HeroProps {}
 
 export default function Hero({}: HeroProps) {
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative">
+    <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative bg-foreground/[0.02]">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-foreground/[0.01] to-transparent pointer-events-none"></div>
       <div className="max-w-4xl mx-auto text-center relative z-10">
@@ -44,7 +44,11 @@ export default function Hero({}: HeroProps) {
       </div>
 
       {/* Scroll indicator arrow */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+      <a
+        href="#about"
+        aria-label="Scroll to About section"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20"
+      >
         <svg
           width="24"
           height="24"
@@ -60,7 +64,7 @@ export default function Hero({}: HeroProps) {
             strokeLinejoin="round"
           />
         </svg>
-      </div>
+      </a>
     </section>
   );
 }

@@ -101,14 +101,15 @@ export default function Projects({}: ProjectsProps) {
             <div
               key={index}
               role="article"
-              className={`group bg-background rounded-xl p-8 border transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${
+              className={`group bg-background rounded-xl p-8 border transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 h-full ${
                 index <= 1
                   ? "border-accent/30 shadow-lg shadow-accent/5 hover:border-accent/50 hover:shadow-accent/15"
                   : "border-foreground/10 hover:border-accent/30 hover:shadow-accent/10"
               }`}
             >
-              <div className="space-y-6">
-                <div>
+              <div className="flex flex-col h-full">
+                {/* Header Section - Fixed Height */}
+                <div className="h-[200px] flex flex-col justify-start">
                   <div className="flex items-center gap-2 mb-3">
                     <h3 className="text-xl font-medium text-foreground group-hover:text-foreground transition-colors">
                       {project.title}
@@ -124,7 +125,8 @@ export default function Projects({}: ProjectsProps) {
                   </p>
                 </div>
 
-                <div>
+                {/* Technologies Section - Fixed Position */}
+                <div className="py-6">
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
                       <span
@@ -142,7 +144,8 @@ export default function Projects({}: ProjectsProps) {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 pt-2 flex-wrap">
+                {/* Links Section - Fixed Height */}
+                <div className="min-h-[60px] flex items-center gap-4 pt-2 flex-wrap">
                   {project.link && (
                     <a
                       href={project.link}

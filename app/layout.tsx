@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./context/theme-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   title: "Messaoud ZOUGGAB | Fullstack Developer",
   description:
     "Passionate fullstack developer specializing in React, Angular, NestJS, and modern web technologies. Currently working at Clic-ERP, expanding expertise in DevOps practices and containerization.",
-  metadataBase: new URL("https://messaoud.dev"),
+  metadataBase: new URL("https://codingmessaoud.com"),
   alternates: {
     canonical: "/",
   },
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     title: "Messaoud ZOUGGAB | Fullstack Developer",
     description:
       "Passionate fullstack developer specializing in React, Angular, NestJS, and modern web technologies.",
-    url: "https://messaoud.dev/",
+    url: "https://codingmessaoud.com/",
     siteName: "Messaoud ZOUGGAB Portfolio",
     locale: "en_US",
     type: "website",
@@ -53,7 +54,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
