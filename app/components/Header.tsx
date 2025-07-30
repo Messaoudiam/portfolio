@@ -22,7 +22,7 @@ export default function Header({}: HeaderProps) {
           {/* Navigation & utilities */}
           <div className="flex items-center gap-4">
             {/* Navigation links */}
-            <div className="hidden">
+            <div className="hidden md:flex items-center space-x-6">
               <a
                 href="#about"
                 className="text-sm font-medium text-foreground/70 hover:text-accent transition-colors"
