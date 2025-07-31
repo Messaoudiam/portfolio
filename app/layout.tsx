@@ -38,9 +38,14 @@ export const metadata: Metadata = {
   //   creator: "@messaoudev", // update with actual handle if different
   // },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: [
+      {
+        url: "/icon.ico",
+        type: "image/ico",
+      },
+    ],
+    shortcut: "/icon.ico",
+    apple: "/icon.ico",
   },
 };
 

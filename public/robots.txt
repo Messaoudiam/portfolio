@@ -1,0 +1,20 @@
+# Robots.txt for Messaoud ZOUGGAB Portfolio
+# https://codingmessaoud.com
+
+User-agent: *
+Allow: /
+
+# Block Next.js internal files
+Disallow: /_next/static/chunks/
+Disallow: /_next/static/css/
+Disallow: /_next/static/js/
+
+# Allow essential assets
+Allow: /_next/static/media/
+Allow: /_next/image*
+
+# Block API routes (if any exist in future)
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://codingmessaoud.com/sitemap.xml
