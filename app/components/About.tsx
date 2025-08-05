@@ -100,7 +100,7 @@ export default function About({}: AboutProps) {
                     <h4 className="text-sm font-semibold text-accent mb-3 uppercase tracking-wider">
                       {category}
                     </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div className="grid grid-cols-2 gap-2">
                       {skills.map((skill) => (
                         <div
                           key={skill}
