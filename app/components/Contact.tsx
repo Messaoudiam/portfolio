@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 interface ContactProps {}
 
@@ -40,12 +41,34 @@ export default function Contact({}: ContactProps) {
     e.preventDefault();
     setStatus({ type: "loading", message: "Sending message..." });
 
-    // Simulate form submission (replace with your actual form handling)
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      
-      // For demo purposes - you can integrate with EmailJS, Formspree, etc.
-      console.log("Form submitted:", formData);
+      // EmailJS configuration
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
+
+      if (!serviceId || !templateId || !userId) {
+        throw new Error("EmailJS configuration is missing. Please check your environment variables.");
+      }
+
+      // Prepare template parameters for EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: "codingmessaoud@gmail.com", // Your email
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        userId
+      );
+
+      console.log("Email sent successfully:", response);
       
       setStatus({
         type: "success",
@@ -55,9 +78,10 @@ export default function Contact({}: ContactProps) {
       // Reset form
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
+      console.error("Email sending failed:", error);
       setStatus({
         type: "error",
-        message: "Failed to send message. Please try again.",
+        message: "Failed to send message. Please try again or contact me directly via email.",
       });
     }
   };
@@ -260,7 +284,7 @@ export default function Contact({}: ContactProps) {
                       Sending...
                     </span>
                   ) : (
-                    <span>
+                    <span className="cursor-pointer">
                       Send Message
                       <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">
                         →
