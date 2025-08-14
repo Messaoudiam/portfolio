@@ -18,9 +18,10 @@ export default function Hero({}: HeroProps) {
           </div>
 
           <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed font-light">
-            Passionate fullstack developer specializing in React, NestJS, and
-            modern web technologies. Currently contributing to innovative
-            solutions at Clic-ERP while expanding expertise in DevOps practices.
+            I am a passionate fullstack developer with a strong focus on
+            TypeScript, Angular, and NestJS. I am currently working at Clic-ERP
+            as a fullstack developer, where I am responsible for developing and
+            maintaining the company's web applications.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
