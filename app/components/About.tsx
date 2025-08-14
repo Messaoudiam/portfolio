@@ -16,6 +16,10 @@ import {
   SiGithubactions,
   SiGit,
   SiNextdotjs,
+  SiNuxtdotjs,
+  SiVuedotjs,
+  SiSupabase,
+  SiDrizzle,
 } from "react-icons/si";
 import { MdDevices } from "react-icons/md";
 
@@ -43,6 +47,10 @@ export default function About({}: AboutProps) {
     Git: <SiGit className="w-4 h-4 text-[#F05032]" />,
     "CI/CD": <SiGithubactions className="w-4 h-4 text-[#2088FF]" />,
     "Next.js": <SiNextdotjs className="w-4 h-4 text-[#000000]" />,
+    "Nuxt": <SiNuxtdotjs className="w-4 h-4 text-[#00DC82]" />,
+    "Vue": <SiVuedotjs className="w-4 h-4 text-[#4FC08D]" />,
+    "Supabase": <SiSupabase className="w-4 h-4 text-[#3ECF8E]" />,
+    "Drizzle": <SiDrizzle className="w-4 h-4 text-[#C5F74F]" />,
   };
 
   const skillCategories = {
@@ -52,10 +60,12 @@ export default function About({}: AboutProps) {
       "Angular Material",
       "React",
       "Next.js",
+      "Vue",
+      "Nuxt",
       "Tailwind CSS",
     ],
-    Backend: ["Node.js", "NestJS", "Express", "TypeORM", "Prisma", "Swagger"],
-    Database: ["MySQL", "PostgreSQL", "MongoDB"],
+    Backend: ["Node.js", "NestJS", "Express", "TypeORM", "Prisma", "Drizzle", "Swagger"],
+    Database: ["MySQL", "PostgreSQL", "MongoDB", "Supabase"],
     DevOps: ["Docker", "GitHub Actions", "Git", "CI/CD"],
   };
 

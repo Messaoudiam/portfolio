@@ -19,6 +19,10 @@ import {
   SiJsonwebtokens,
   SiNextdotjs,
   SiRadixui,
+  SiNuxtdotjs,
+  SiVuedotjs,
+  SiSupabase,
+  SiDrizzle,
 } from "react-icons/si";
 import { MdDevices } from "react-icons/md";
 
@@ -46,6 +50,10 @@ const iconMap: Record<string, React.JSX.Element> = {
   JWT: <SiJsonwebtokens className="w-3 h-3 text-[#000000]" />,
   "Next.js": <SiNextdotjs className="w-3 h-3 text-[#000000]" />,
   "shadcn/ui": <SiRadixui className="w-3 h-3 text-[#161618]" />,
+  "Nuxt": <SiNuxtdotjs className="w-3 h-3 text-[#00DC82]" />,
+  "Vue": <SiVuedotjs className="w-3 h-3 text-[#4FC08D]" />,
+  "Supabase": <SiSupabase className="w-3 h-3 text-[#3ECF8E]" />,
+  "Drizzle": <SiDrizzle className="w-3 h-3 text-[#C5F74F]" />,
 };
 
 interface Project {
@@ -68,13 +76,30 @@ export default function Projects({}: ProjectsProps) {
       tech: [
         "TypeScript",
         "Angular",
+        "Angular Material",
         "NestJS",
         "TypeORM",
         "MySQL",
         "Docker",
-        "Angular Material",
       ],
       link: "https://www.clic-erp.fr/landing",
+    },
+    {
+      title: "Système Fluide",
+      description:
+        "Modern fitness tracking application with infinite progression system. Features daily metrics tracking (calories, macros, weight, steps), workout logging, and science-based methodology. PWA-ready with complete user autonomy for all fitness levels.",
+      tech: [
+        "TypeScript",
+        "Nuxt",
+        "Vue",
+        "Supabase",
+        "Drizzle",
+        "Tailwind CSS",
+        "CI/CD",
+        "GitHub Actions",
+      ],
+      link: "https://systeme-fluide.vercel.app/",
+      github: "https://github.com/Messaoudiam/systeme-fluide",
     },
     {
       title: "MediaTech",
@@ -88,23 +113,9 @@ export default function Projects({}: ProjectsProps) {
         "PostgreSQL",
         "Docker",
         "CI/CD",
+        "GitHub Actions",
       ],
       github: "https://github.com/Messaoudiam/MediaTech",
-    },
-    {
-      title: "School Sign",
-      description:
-        "Modern school management and digital sign-in system built with Next.js 15. Features student registration, attendance tracking, and administrative dashboard with real-time updates and secure authentication.",
-      tech: [
-        "TypeScript",
-        "React",
-        "Next.js",
-        "MySQL",
-        "Prisma",
-        "Tailwind CSS",
-        "shadcn/ui",
-      ],
-      github: "https://github.com/Messaoudiam/school-sign",
     },
   ];
 
