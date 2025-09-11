@@ -104,7 +104,7 @@ export default function Projects({}: ProjectsProps) {
     {
       title: "MediaTech",
       description:
-        "A modern media management platform built with Angular 19 and NestJS. Features standalone components, Prisma ORM, JWT authentication, and comprehensive Docker containerization with CI/CD pipeline.",
+        "A modern media management platform built with Angular 19 and NestJS. Features standalone components, Prisma ORM, JWT authentication, and comprehensive Docker containerization with CI/CD pipeline. Deployed with Docker on VPS.",
       tech: [
         "TypeScript",
         "Angular",
@@ -115,6 +115,7 @@ export default function Projects({}: ProjectsProps) {
         "CI/CD",
         "GitHub Actions",
       ],
+      link: "https://my-library.cloud/landing",
       github: "https://github.com/Messaoudiam/MediaTech",
     },
   ];
