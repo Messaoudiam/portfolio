@@ -75,18 +75,20 @@ export default function Projects({}: ProjectsProps) {
 
   const projects: Project[] = [
     {
-      title: t("clicerp.title"),
-      description: t("clicerp.description"),
+      title: t("caminotv.title"),
+      description: t("caminotv.description"),
       tech: [
         "TypeScript",
-        "Angular",
-        "Angular Material",
-        "NestJS",
-        "TypeORM",
-        "MySQL",
-        "Docker",
+        "Next.js",
+        "React",
+        "Prisma",
+        "PostgreSQL",
+        "Supabase",
+        "Tailwind CSS",
+        "shadcn/ui",
       ],
-      link: "https://www.clic-erp.fr/landing",
+      link: "https://camino-tv.vercel.app",
+      github: "https://github.com/Messaoudiam/camino-tv",
     },
     {
       title: t("systemefluide.title"),

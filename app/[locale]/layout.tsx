@@ -143,6 +143,9 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale}>
+      <head>
+        <meta name="google-site-verification" content="ZqDaAPUmdgXcANz4HCKE2NN07SL-PjKkPF5PRWvEI6Y" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

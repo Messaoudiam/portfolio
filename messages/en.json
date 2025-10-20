@@ -38,9 +38,9 @@
     "github": "GitHub",
     "frontend": "Frontend",
     "backend": "Backend",
-    "clicerp": {
-      "title": "Clic-ERP",
-      "description": "Digital management application for Public Access Establishments (ERP). Centralizes documents, intelligently manages equipment and periodic visits, dematerializes registers, and provides partner access. A comprehensive solution for regulatory compliance and operational efficiency."
+    "caminotv": {
+      "title": "Camino TV",
+      "description": "Complete platform inspired by Camino TV, France's leading lifestyle media. Discover and manage the best deals on sneakers, streetwear, tech and gaming. Full backend with Prisma, PostgreSQL, Supabase and advanced authentication system."
     },
     "systemefluide": {
       "title": "Système Fluide",
