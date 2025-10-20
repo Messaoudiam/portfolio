@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import emailjs from "@emailjs/browser";
 
 interface ContactProps {}
@@ -18,13 +19,15 @@ interface FormStatus {
 }
 
 export default function Contact({}: ContactProps) {
+  const t = useTranslations("Contact");
+
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
-  
+
   const [status, setStatus] = useState<FormStatus>({
     type: "idle",
     message: "",
@@ -39,7 +42,7 @@ export default function Contact({}: ContactProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus({ type: "loading", message: "Sending message..." });
+    setStatus({ type: "loading", message: t("sendingMessage") });
 
     try {
       // EmailJS configuration
@@ -48,7 +51,7 @@ export default function Contact({}: ContactProps) {
       const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
 
       if (!serviceId || !templateId || !userId) {
-        throw new Error("EmailJS configuration is missing. Please check your environment variables.");
+        throw new Error(t("configError"));
       }
 
       // Prepare template parameters for EmailJS
@@ -69,25 +72,25 @@ export default function Contact({}: ContactProps) {
       );
 
       console.log("Email sent successfully:", response);
-      
+
       setStatus({
         type: "success",
-        message: "Message sent successfully! I'll get back to you soon.",
+        message: t("successMessage"),
       });
-      
+
       // Reset form
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
       console.error("Email sending failed:", error);
       setStatus({
         type: "error",
-        message: "Failed to send message. Please try again or contact me directly via email.",
+        message: t("errorMessage"),
       });
     }
   };
   const socialLinks = [
     {
-      name: "Email",
+      name: t("email"),
       href: "mailto:codingmessaoud@gmail.com",
       icon: (
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -109,7 +112,7 @@ export default function Contact({}: ContactProps) {
       ),
     },
     {
-      name: "LinkedIn",
+      name: t("linkedin"),
       href: "https://www.linkedin.com/in/messaoud-zouggab/",
       icon: (
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -138,7 +141,29 @@ export default function Contact({}: ContactProps) {
       ),
     },
     {
-      name: "GitHub",
+      name: t("malt"),
+      href: "https://www.malt.fr/profile/messaoudzouggab",
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path
+            d="M10 18.3333C14.6024 18.3333 18.3333 14.6024 18.3333 10C18.3333 5.39763 14.6024 1.66667 10 1.66667C5.39763 1.66667 1.66667 5.39763 1.66667 10C1.66667 14.6024 5.39763 18.3333 10 18.3333Z"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M10 5.83334V14.1667M6.66667 8.33334L10 5.83334L13.3333 8.33334M6.66667 11.6667L10 14.1667L13.3333 11.6667"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      ),
+    },
+    {
+      name: t("github"),
       href: "https://github.com/Messaoudiam",
       icon: (
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -177,13 +202,11 @@ export default function Contact({}: ContactProps) {
           {/* Header */}
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-light tracking-tight text-foreground mb-6">
-              Let's Work Together
+              {t("title")}
             </h2>
             <div className="w-16 h-px bg-gradient-to-r from-transparent via-accent to-transparent mx-auto"></div>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed mt-6">
-              I'm always interested in new opportunities and exciting projects.
-              Whether you have a question or just want to say hello, feel free to
-              reach out.
+              {t("subtitle")}
             </p>
           </div>
 
@@ -193,7 +216,7 @@ export default function Contact({}: ContactProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="block text-sm font-medium text-foreground/70">
-                    Name
+                    {t("nameLabel")}
                   </label>
                   <input
                     type="text"
@@ -203,12 +226,12 @@ export default function Contact({}: ContactProps) {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 bg-background border border-foreground/20 rounded-lg text-foreground placeholder-foreground/50 focus:outline-none focus:border-accent focus:bg-accent/5 transition-all duration-300"
-                    placeholder="Your name"
+                    placeholder={t("namePlaceholder")}
                   />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="block text-sm font-medium text-foreground/70">
-                    Email
+                    {t("emailLabel")}
                   </label>
                   <input
                     type="email"
@@ -218,14 +241,14 @@ export default function Contact({}: ContactProps) {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 bg-background border border-foreground/20 rounded-lg text-foreground placeholder-foreground/50 focus:outline-none focus:border-accent focus:bg-accent/5 transition-all duration-300"
-                    placeholder="your.email@example.com"
+                    placeholder={t("emailPlaceholder")}
                   />
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 <label htmlFor="subject" className="block text-sm font-medium text-foreground/70">
-                  Subject
+                  {t("subjectLabel")}
                 </label>
                 <input
                   type="text"
@@ -235,13 +258,13 @@ export default function Contact({}: ContactProps) {
                   onChange={handleInputChange}
                   required
                   className="w-full px-4 py-3 bg-background border border-foreground/20 rounded-lg text-foreground placeholder-foreground/50 focus:outline-none focus:border-accent focus:bg-accent/5 transition-all duration-300"
-                  placeholder="What would you like to discuss?"
+                  placeholder={t("subjectPlaceholder")}
                 />
               </div>
-              
+
               <div className="space-y-2">
                 <label htmlFor="message" className="block text-sm font-medium text-foreground/70">
-                  Message
+                  {t("messageLabel")}
                 </label>
                 <textarea
                   id="message"
@@ -251,7 +274,7 @@ export default function Contact({}: ContactProps) {
                   onChange={handleInputChange}
                   required
                   className="w-full px-4 py-3 bg-background border border-foreground/20 rounded-lg text-foreground placeholder-foreground/50 focus:outline-none focus:border-accent focus:bg-accent/5 transition-all duration-300 resize-none"
-                  placeholder="Tell me about your project or inquiry..."
+                  placeholder={t("messagePlaceholder")}
                 />
               </div>
 
@@ -281,11 +304,11 @@ export default function Contact({}: ContactProps) {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
                       </svg>
-                      Sending...
+                      {t("sending")}
                     </span>
                   ) : (
                     <span className="cursor-pointer">
-                      Send Message
+                      {t("sendButton")}
                       <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">
                         →
                       </span>
@@ -299,7 +322,7 @@ export default function Contact({}: ContactProps) {
           {/* Social Links */}
           <div className="text-center">
             <p className="text-sm text-foreground/60 mb-6">
-              Or connect with me directly
+              {t("socialTitle")}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               {socialLinks.map((link) => (

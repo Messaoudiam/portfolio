@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { useTranslations } from "next-intl";
 import {
   SiTypescript,
   SiAngular,
@@ -26,6 +29,8 @@ import { MdDevices } from "react-icons/md";
 interface AboutProps {}
 
 export default function About({}: AboutProps) {
+  const t = useTranslations("About");
+
   // Icon mapping for each technology
   const iconMap: { [key: string]: React.JSX.Element } = {
     TypeScript: <SiTypescript className="w-4 h-4 text-[#3178C6]" />,
@@ -78,23 +83,17 @@ export default function About({}: AboutProps) {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl md:text-4xl font-light tracking-tight text-foreground mb-6">
-                About Me
+                {t("title")}
               </h2>
               <div className="w-16 h-px bg-gradient-to-r from-accent to-accent/50"></div>
             </div>
 
             <div className="space-y-6 text-foreground/80 leading-relaxed">
               <p>
-                I'm Messaoud ZOUGGAB, a passionate fullstack developer with
-                expertise in modern web technologies. Currently working at
-                Clic-ERP since February 2025, I specialize in React, Angular,
-                NestJS, and building scalable web applications.
+                {t("intro1")}
               </p>
               <p>
-                My journey includes mastering both frontend and backend
-                technologies, with a current focus on expanding my skills in
-                DevOps practices. I'm particularly interested in microservices
-                architecture, containerization with Docker.
+                {t("intro2")}
               </p>
             </div>
           </div>
@@ -102,13 +101,13 @@ export default function About({}: AboutProps) {
           <div className="space-y-8">
             <div>
               <h3 className="text-xl font-medium text-foreground mb-6">
-                Skills & Technologies
+                {t("skillsTitle")}
               </h3>
               <div className="space-y-6">
                 {Object.entries(skillCategories).map(([category, skills]) => (
                   <div key={category}>
                     <h4 className="text-sm font-semibold text-accent mb-3 uppercase tracking-wider">
-                      {category}
+                      {t(category.toLowerCase() as 'frontend' | 'backend' | 'database' | 'devops')}
                     </h4>
                     <div className="grid grid-cols-2 gap-2">
                       {skills.map((skill) => (
@@ -132,39 +131,35 @@ export default function About({}: AboutProps) {
 
             <div>
               <h3 className="text-xl font-medium text-foreground mb-6">
-                Experience
+                {t("experienceTitle")}
               </h3>
               <div className="space-y-6">
                 <div className="border-l-2 border-accent/30 pl-6">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                     <h4 className="font-medium text-foreground">
-                      Fullstack Developer
+                      {t("currentJob")}
                     </h4>
                     <span className="text-sm text-accent font-mono font-medium">
-                      Feb 2025 - Present
+                      {t("currentPeriod")}
                     </span>
                   </div>
                   <p className="text-sm text-foreground/70">
-                    <span className="font-medium text-accent">Clic-ERP</span> -
-                    Building innovative ERP solutions using modern web
-                    technologies and contributing to scalable application
-                    development.
+                    <span className="font-medium text-accent">{t("currentCompany")}</span> -
+                    {" "}{t("currentDescription")}
                   </p>
                 </div>
 
                 <div className="border-l-2 border-accent/20 pl-6">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                     <h4 className="font-medium text-foreground">
-                      Learning & Development
+                      {t("learningJob")}
                     </h4>
                     <span className="text-sm text-accent/80 font-mono font-medium">
-                      Ongoing
+                      {t("learningPeriod")}
                     </span>
                   </div>
                   <p className="text-sm text-foreground/70">
-                    Continuously expanding skills in DevOps practices and
-                    microservices architecture while exploring modern deployment
-                    and containerization strategies.
+                    {t("learningDescription")}
                   </p>
                 </div>
               </div>

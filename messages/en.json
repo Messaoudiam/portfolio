@@ -1,0 +1,88 @@
+{
+  "Header": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "scrollToTop": "Scroll to top"
+  },
+  "Hero": {
+    "name": "Messaoud ZOUGGAB",
+    "title": "Fullstack Developer",
+    "description": "I am a passionate fullstack developer with a strong focus on TypeScript, Angular, and NestJS. I am currently working at Clic-ERP as a fullstack developer, where I am responsible for developing and maintaining the company's web applications.",
+    "viewProjects": "View Projects",
+    "getInTouch": "Get in Touch",
+    "scrollToAbout": "Scroll to About section"
+  },
+  "About": {
+    "title": "About Me",
+    "intro1": "I'm Messaoud ZOUGGAB, a passionate fullstack developer with expertise in modern web technologies. Currently working at Clic-ERP since February 2025, I specialize in React, Angular, NestJS, and building scalable web applications.",
+    "intro2": "My journey includes mastering both frontend and backend technologies, with a current focus on expanding my skills in DevOps practices. I'm particularly interested in microservices architecture, containerization with Docker.",
+    "skillsTitle": "Skills & Technologies",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Database",
+    "devops": "DevOps",
+    "experienceTitle": "Experience",
+    "currentJob": "Fullstack Developer",
+    "currentPeriod": "Feb 2025 - Present",
+    "currentCompany": "Clic-ERP",
+    "currentDescription": "Building innovative ERP solutions using modern web technologies and contributing to scalable application development.",
+    "learningJob": "Learning & Development",
+    "learningPeriod": "Ongoing",
+    "learningDescription": "Continuously expanding skills in DevOps practices and microservices architecture while exploring modern deployment and containerization strategies."
+  },
+  "Projects": {
+    "title": "Selected Projects",
+    "current": "Current",
+    "website": "Website",
+    "github": "GitHub",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "clicerp": {
+      "title": "Clic-ERP",
+      "description": "Digital management application for Public Access Establishments (ERP). Centralizes documents, intelligently manages equipment and periodic visits, dematerializes registers, and provides partner access. A comprehensive solution for regulatory compliance and operational efficiency."
+    },
+    "systemefluide": {
+      "title": "Système Fluide",
+      "description": "Modern fitness tracking application with infinite progression system. Features daily metrics tracking (calories, macros, weight, steps), workout logging, and science-based methodology. PWA-ready with complete user autonomy for all fitness levels."
+    },
+    "mediatech": {
+      "title": "MediaTech",
+      "description": "A modern media management platform built with Angular 19 and NestJS. Features standalone components, Prisma ORM, JWT authentication, and comprehensive Docker containerization with CI/CD pipeline. Deployed with Docker on VPS."
+    }
+  },
+  "Contact": {
+    "title": "Let's Work Together",
+    "subtitle": "I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hello, feel free to reach out.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your.email@example.com",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "What would you like to discuss?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me about your project or inquiry...",
+    "sendButton": "Send Message",
+    "sending": "Sending...",
+    "sendingMessage": "Sending message...",
+    "successMessage": "Message sent successfully! I'll get back to you soon.",
+    "errorMessage": "Failed to send message. Please try again or contact me directly via email.",
+    "configError": "EmailJS configuration is missing. Please check your environment variables.",
+    "socialTitle": "Or connect with me directly",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "malt": "Malt",
+    "github": "GitHub"
+  },
+  "Footer": {
+    "copyright": "All rights reserved."
+  },
+  "EasterEgg": {
+    "greeting": "Hi",
+    "and": "&",
+    "message1": "As I told you, I've wanted to work at {company} since 2018 but I was a warehouse worker... But now! I've been a Fullstack Web Developer for 2 years and I'm ready to join the Camino TV adventure.",
+    "message2": "I agree with what you said on the recruitment live stream, about the notion of communication that you need to have in life and not just at work.",
+    "message3": "Looking forward to sharing together",
+    "closing": "LONG LIVE TO ALL OF US!"
+  }
+}

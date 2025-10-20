@@ -1,8 +1,11 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 interface FooterProps {}
 
 export default function Footer({}: FooterProps) {
+  const t = useTranslations("Footer");
   const currentYear = new Date().getFullYear();
 
   return (
@@ -10,7 +13,7 @@ export default function Footer({}: FooterProps) {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm text-foreground/60 font-mono">
-            © {currentYear} Messaoud ZOUGGAB. All rights reserved.
+            © {currentYear} Messaoud ZOUGGAB. {t("copyright")}
           </div>
         </div>
       </div>

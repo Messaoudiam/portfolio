@@ -1,6 +1,12 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 interface HeroProps {}
 
 export default function Hero({}: HeroProps) {
+  const t = useTranslations("Hero");
+
   return (
     <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative bg-foreground/[0.02]">
       {/* Background gradient overlay */}
@@ -9,19 +15,16 @@ export default function Hero({}: HeroProps) {
         <div className="space-y-6">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
-              Messaoud ZOUGGAB
+              {t("name")}
             </h1>
             <p className="text-xl md:text-2xl font-light text-accent mt-4">
-              Fullstack Developer
+              {t("title")}
             </p>
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-accent to-transparent mx-auto"></div>
           </div>
 
           <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed font-light">
-            I am a passionate fullstack developer with a strong focus on
-            TypeScript, Angular, and NestJS. I am currently working at Clic-ERP
-            as a fullstack developer, where I am responsible for developing and
-            maintaining the company's web applications.
+            {t("description")}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
@@ -29,7 +32,7 @@ export default function Hero({}: HeroProps) {
               href="#projects"
               className="group px-8 py-3 bg-accent text-white rounded-full font-medium text-sm transition-all duration-300 hover:bg-accent/90 hover:scale-105 shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/40"
             >
-              View Projects
+              {t("viewProjects")}
               <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">
                 →
               </span>
@@ -38,7 +41,7 @@ export default function Hero({}: HeroProps) {
               href="#contact"
               className="px-8 py-3 border border-accent/30 text-foreground rounded-full font-medium text-sm transition-all duration-300 hover:border-accent hover:bg-accent/5 hover:shadow-lg hover:shadow-accent/20"
             >
-              Get in Touch
+              {t("getInTouch")}
             </a>
           </div>
         </div>
@@ -47,7 +50,7 @@ export default function Hero({}: HeroProps) {
       {/* Scroll indicator arrow */}
       <a
         href="#about"
-        aria-label="Scroll to About section"
+        aria-label={t("scrollToAbout")}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20"
       >
         <svg

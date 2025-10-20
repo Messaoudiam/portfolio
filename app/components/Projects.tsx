@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { useTranslations } from "next-intl";
 import {
   SiTypescript,
   SiAngular,
@@ -68,11 +71,12 @@ interface Project {
 interface ProjectsProps {}
 
 export default function Projects({}: ProjectsProps) {
+  const t = useTranslations("Projects");
+
   const projects: Project[] = [
     {
-      title: "Clic-ERP",
-      description:
-        "Digital management application for Public Access Establishments (ERP). Centralizes documents, intelligently manages equipment and periodic visits, dematerializes registers, and provides partner access. A comprehensive solution for regulatory compliance and operational efficiency.",
+      title: t("clicerp.title"),
+      description: t("clicerp.description"),
       tech: [
         "TypeScript",
         "Angular",
@@ -85,9 +89,8 @@ export default function Projects({}: ProjectsProps) {
       link: "https://www.clic-erp.fr/landing",
     },
     {
-      title: "Système Fluide",
-      description:
-        "Modern fitness tracking application with infinite progression system. Features daily metrics tracking (calories, macros, weight, steps), workout logging, and science-based methodology. PWA-ready with complete user autonomy for all fitness levels.",
+      title: t("systemefluide.title"),
+      description: t("systemefluide.description"),
       tech: [
         "TypeScript",
         "Nuxt",
@@ -102,9 +105,8 @@ export default function Projects({}: ProjectsProps) {
       github: "https://github.com/Messaoudiam/systeme-fluide",
     },
     {
-      title: "MediaTech",
-      description:
-        "A modern media management platform built with Angular 19 and NestJS. Features standalone components, Prisma ORM, JWT authentication, and comprehensive Docker containerization with CI/CD pipeline. Deployed with Docker on VPS.",
+      title: t("mediatech.title"),
+      description: t("mediatech.description"),
       tech: [
         "TypeScript",
         "Angular",
@@ -131,7 +133,7 @@ export default function Projects({}: ProjectsProps) {
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-light tracking-tight text-foreground mb-6">
-            Selected Projects
+            {t("title")}
           </h2>
           <div className="w-16 h-px bg-gradient-to-r from-transparent via-accent to-transparent mx-auto"></div>
         </div>
@@ -156,7 +158,7 @@ export default function Projects({}: ProjectsProps) {
                     </h3>
                     {index <= 1 && (
                       <span className="px-2 py-1 bg-accent text-white text-xs font-medium rounded-full">
-                        Current
+                        {t("current")}
                       </span>
                     )}
                   </div>
@@ -194,7 +196,7 @@ export default function Projects({}: ProjectsProps) {
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-sm font-medium text-accent hover:text-accent/80 transition-colors"
                     >
-                      Website
+                      {t("website")}
                       <svg
                         width="16"
                         height="16"
@@ -220,7 +222,7 @@ export default function Projects({}: ProjectsProps) {
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-sm font-medium text-accent/80 hover:text-accent transition-colors"
                     >
-                      {project.githubBackend ? "Frontend" : "GitHub"}
+                      {project.githubBackend ? t("frontend") : t("github")}
                       <svg
                         width="16"
                         height="16"
@@ -246,7 +248,7 @@ export default function Projects({}: ProjectsProps) {
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-sm font-medium text-accent/60 hover:text-accent transition-colors"
                     >
-                      Backend
+                      {t("backend")}
                       <svg
                         width="16"
                         height="16"
