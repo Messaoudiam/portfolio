@@ -36,13 +36,13 @@ export async function generateMetadata({ params }: Props) {
   };
 
   const descriptions = {
-    en: "Passionate fullstack developer specializing in React, Angular, NestJS, and modern web technologies. Currently working at Clic-ERP, expanding expertise in DevOps practices and containerization.",
-    fr: "Développeur fullstack passionné spécialisé en React, Angular, NestJS et technologies web modernes. Actuellement chez Clic-ERP, j'élargis mon expertise en pratiques DevOps et conteneurisation."
+    en: "Fullstack Developer in Lyon specializing in TypeScript, React, Next.js, Angular, NestJS. Building scalable web applications with modern technologies.",
+    fr: "Développeur Fullstack à Lyon spécialisé en TypeScript, React, Next.js, Angular, NestJS. Création d'applications web évolutives et modernes."
   };
 
   const keywords = {
-    en: "Fullstack Developer, React Developer, Angular Developer, NestJS Developer, TypeScript Expert, Web Developer Lyon, DevOps, Docker, Node.js, Frontend Developer, Backend Developer, Messaoud ZOUGGAB",
-    fr: "Développeur Fullstack, Développeur React, Développeur Angular, Développeur NestJS, Expert TypeScript, Développeur Web Lyon, DevOps, Docker, Node.js, Développeur Frontend, Développeur Backend, Messaoud ZOUGGAB"
+    en: "Fullstack Developer, React Developer, Next.js Developer, Angular Developer, NestJS Developer, TypeScript Expert, Web Developer Lyon, DevOps, Docker, Node.js, Frontend Developer, Backend Developer, Messaoud ZOUGGAB",
+    fr: "Développeur Fullstack, Développeur React, Développeur Next.js, Développeur Angular, Développeur NestJS, Expert TypeScript, Développeur Web Lyon, DevOps, Docker, Node.js, Développeur Frontend, Développeur Backend, Messaoud ZOUGGAB"
   };
 
   return {
